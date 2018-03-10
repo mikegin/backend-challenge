@@ -25,15 +25,31 @@ public class Conversation {
         return conversationId;
     }
 
+    public void setConversationId(UUID conversationId) {
+        this.conversationId = conversationId;
+    }
+
     public List<Message> getMessages() {
         return messages;
     }
 
-    public List<User> getMembers() { return members; }
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<User> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<User> members) {
+        this.members = members;
+    }
 
     public void addMessage(Message message) {
         this.messages.add(message);
     }
+
+    public void addUser(User user) { this.members.add(user); }
 
     public boolean hasUser(String userName) {
         for(User user: members) {

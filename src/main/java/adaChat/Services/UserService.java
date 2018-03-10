@@ -15,7 +15,7 @@ public class UserService {
     public void addUser(String userName) throws EntityExistsException {
         //check if user exists
         if(userRepository.getUser(userName) != null) {
-            throw new EntityExistsException("User already exists.");
+            throw new EntityExistsException("User " + userName + " already exists.");
         }
 
         User user = new User(userName);

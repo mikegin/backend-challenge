@@ -20,8 +20,13 @@ public class ConversationService {
     @Autowired
     UserRepository userRepository;
 
-    public ConversationDTO getConversation(UUID conversationId) {
+    public ConversationDTO getConversation(UUID conversationId) throws EntityNotFoundException {
         Conversation conversation = conversationRepository.getConversation(conversationId);
+
+        if(conversation == null) {
+            throw new EntityNotFoundException(
+                    "Conversation with conversationId: " + conversationId + " does not exist.");
+        }
 
         ConversationDTO conversationDTO = new ConversationDTO();
         conversationDTO.setConversationId(conversation.getConversationId());

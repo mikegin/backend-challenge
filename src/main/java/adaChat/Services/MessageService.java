@@ -23,13 +23,13 @@ public class MessageService {
         //check if user exists
         User user = userRepository.getUser(messageDTO.getSender());
         if(user == null) {
-            throw new EntityNotFoundException("User does not exist.");
+            throw new EntityNotFoundException("User " + messageDTO.getSender() + " does not exist.");
         }
 
         //check if user in conversation
         Conversation conversation = conversationRepository.getConversation(messageDTO.getConversationId());
         if(!conversation.hasUser(user.getUserName())) {
-            throw new EntityNotFoundException("User not part of the conversation.");
+            throw new EntityNotFoundException("User " + user.getUserName() + " is not part of the conversation.");
         }
 
         Message message = new Message(messageDTO.getSender(), messageDTO.getMessage());
