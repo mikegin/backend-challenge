@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ada Support Backend Challenge - Mikhail Gindin
 
 ## How to start the app
