@@ -53,3 +53,7 @@ Copy the returned conversation ID to your clipboard.
 
 ## See all the messages in the conversation
 ### `/conversations/<paste the conversation ID here>` GET
+
+<br />
+
+That's it! Thanks for the challenge, it was a lot of fun :smiley:
