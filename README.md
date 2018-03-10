@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ada Support Backend Challenge - Mikhail Gindin
 
 ## How to start the app
@@ -6,8 +5,6 @@
 mvn clean install
 java -jar target/adaChat-1.0-SNAPSHOT.jar
 ```
-
-#The Work Flow
 
 ## Create some users
 ### `/users` POST
