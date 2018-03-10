@@ -1,5 +1,6 @@
 package adaChat.Controllers;
 
+import adaChat.Entities.User;
 import adaChat.Exceptions.EntityExistsException;
 import adaChat.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,9 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/user")
-    public ResponseEntity addUser(@RequestBody String userName) {
+    public ResponseEntity addUser(@RequestBody User user) {
         try {
-            userService.addUser(userName);
+            userService.addUser(user);
         } catch (EntityExistsException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

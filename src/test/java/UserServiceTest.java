@@ -26,10 +26,10 @@ public class UserServiceTest {
     @Test(expected = EntityExistsException.class)
     public void testAddUserAlreadyExists() throws Exception {
         //Arrange
-        String userName = "Tom";
-        when(userRepository.getUser(userName)).thenReturn(new User(userName));
+        User user = new User("Tom");
+        when(userRepository.getUser(user.getUserName())).thenReturn(user);
 
         //Act
-        userService.addUser(userName);
+        userService.addUser(user);
     }
 }

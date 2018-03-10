@@ -12,13 +12,12 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void addUser(String userName) throws EntityExistsException {
+    public void addUser(User user) throws EntityExistsException {
         //check if user exists
-        if(userRepository.getUser(userName) != null) {
-            throw new EntityExistsException("User " + userName + " already exists.");
+        if(userRepository.getUser(user.getUserName()) != null) {
+            throw new EntityExistsException("User " + user.getUserName() + " already exists.");
         }
 
-        User user = new User(userName);
         userRepository.addUser(user);
     }
 }
