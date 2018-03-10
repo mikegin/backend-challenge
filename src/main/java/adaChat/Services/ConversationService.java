@@ -37,7 +37,7 @@ public class ConversationService {
 
     public UUID createConversation(Conversation conversation) throws EntityNotFoundException {
         //check if all members exist
-        for(User user: conversation.getMembers()) {
+        for(User user: conversation.getUsers()) {
             if(userRepository.getUser(user.getUserName()) == null) {
                 throw new EntityNotFoundException("User: " + user.getUserName() + " does not exist.");
             }

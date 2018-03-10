@@ -7,18 +7,18 @@ import java.util.UUID;
 public class Conversation {
     private UUID conversationId;
     private List<Message> messages;
-    private List<User> members;
+    private List<User> users;
 
     public Conversation() {
         conversationId = UUID.randomUUID();
         this.messages = new ArrayList<>();
-        this.members = new ArrayList<>();
+        this.users = new ArrayList<>();
     }
 
     public Conversation(UUID conversationId) {
         this.conversationId = conversationId;
         this.messages = new ArrayList<>();
-        this.members = new ArrayList<>();
+        this.users = new ArrayList<>();
     }
 
     public UUID getConversationId() {
@@ -37,22 +37,22 @@ public class Conversation {
         this.messages = messages;
     }
 
-    public List<User> getMembers() {
-        return members;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setMembers(List<User> members) {
-        this.members = members;
+    public void setUsers(List<User> members) {
+        this.users = members;
     }
 
     public void addMessage(Message message) {
         this.messages.add(message);
     }
 
-    public void addUser(User user) { this.members.add(user); }
+    public void addUser(User user) { this.users.add(user); }
 
     public boolean hasUser(String userName) {
-        for(User user: members) {
+        for(User user: users) {
             if(user.getUserName().equals(userName)) {
                 return true;
             }
