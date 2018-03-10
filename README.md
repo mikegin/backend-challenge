@@ -7,13 +7,13 @@ java -jar target/adaChat-1.0-SNAPSHOT.jar
 ```
 
 ## Create some users
-### `/users` POST
+### `localhost:8080/users` POST
 ```javascript
 {
     "userName": "Tom"
 }
 ```
-### `/users` POST
+### `localhost:8080/users` POST
 ```javascript
 {
     "userName": "Bob"
@@ -22,7 +22,7 @@ java -jar target/adaChat-1.0-SNAPSHOT.jar
 
 
 ## Create a conversation
-### `/conversations` POST
+### `localhost:8080/conversations` POST
 ```javascript
 {
 	"users": [
@@ -40,7 +40,7 @@ Copy the returned conversation ID to your clipboard.
 <br />
 
 ## Send a message
-### `/messages` POST
+### `localhost:8080/messages` POST
 ```javascript
 {
 	"sender": "Tom",
@@ -50,7 +50,7 @@ Copy the returned conversation ID to your clipboard.
 ```
 
 ## See all the messages in the conversation
-### `/conversations/<paste the conversation ID here>` GET
+### `localhost:8080/conversations/<paste the conversation ID here>` GET
 
 <br />
 
